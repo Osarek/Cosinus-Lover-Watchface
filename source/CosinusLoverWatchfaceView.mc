@@ -25,26 +25,28 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
     // animator.myTimer.start(method(:timerCallback), animator.getTimerMs(), true);
   }
 
+  function onPartialUpdate(dc) as Void {
+    onUpdate(dc);
+  }
+
   // Update the view
   function onUpdate(dc as Dc) as Void {
     View.onUpdate(dc);
     // animator.timerCounter++;
 
-    var TimeSegmentsColor = Properties.getValue("TimeSegments")
-      .toNumberWithBase(16);
+    var TimeSegmentsColor =
+      Properties.getValue("TimeSegments").toNumberWithBase(16);
 
-    var HourHandColor = Properties.getValue("HourHandColor")
-      .toNumberWithBase(16);
-    var MinHandColor = Properties.getValue("MinHandColor")
-      .toNumberWithBase(16);
-    var SecHandColor = Properties.getValue("SecHandColor")
-      .toNumberWithBase(16);
-    var CosinusColor = Properties.getValue("CosinusColor")
-      .toNumberWithBase(16);
+    var HourHandColor =
+      Properties.getValue("HourHandColor").toNumberWithBase(16);
+    var MinHandColor = Properties.getValue("MinHandColor").toNumberWithBase(16);
+    var SecHandColor = Properties.getValue("SecHandColor").toNumberWithBase(16);
+    var CosinusColor = Properties.getValue("CosinusColor").toNumberWithBase(16);
     var SinusColor = getApp().getProperty("SinusColor").toNumberWithBase(16);
     var AngleColor = getApp().getProperty("AngleColor").toNumberWithBase(16);
     var AxisColor = getApp().getProperty("AxisColor").toNumberWithBase(16);
     var Cosinushand = getApp().getProperty("Cosinushand");
+    var ShowSeconds = getApp().getProperty("ShowSeconds");
 
     dc.setPenWidth(1);
 
@@ -146,9 +148,11 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
       1.0
     );
 
-    dc.setColor(HourHandColor, Graphics.COLOR_TRANSPARENT);
+    if (ShowSeconds) {
+      dc.setColor(SecHandColor, Graphics.COLOR_TRANSPARENT);
 
-    drawHand(dc, cosSec, sinSec, angleSec, 0.8, 0.8, handSecSize, 1.0);
+      drawHand(dc, cosSec, sinSec, angleSec, 0.8, 0.8, handSecSize, 1.0);
+    }
 
     if (Cosinushand != 0) {
       dc.setColor(AxisColor, Graphics.COLOR_TRANSPARENT);
@@ -173,12 +177,12 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
       var just180;
       var just360;
 
-      if (Cosinushand==1){
-        just180=Graphics.TEXT_JUSTIFY_RIGHT;
-        just360= Graphics.TEXT_JUSTIFY_LEFT;
-      }else  {
-        just180=Graphics.TEXT_JUSTIFY_LEFT;
-        just360= Graphics.TEXT_JUSTIFY_RIGHT;
+      if (Cosinushand == 1) {
+        just180 = Graphics.TEXT_JUSTIFY_RIGHT;
+        just360 = Graphics.TEXT_JUSTIFY_LEFT;
+      } else {
+        just180 = Graphics.TEXT_JUSTIFY_LEFT;
+        just360 = Graphics.TEXT_JUSTIFY_RIGHT;
       }
 
       drawText(
@@ -267,6 +271,8 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
       );
 
       //Angles
+
+if (angleChoosen != angleSec || ShowSeconds != false){
       dc.setColor(AngleColor, Graphics.COLOR_TRANSPARENT);
 
       drawText(
@@ -334,6 +340,7 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
         Graphics.TEXT_JUSTIFY_VCENTER | alignSin,
         handHourSize
       );
+    }
     }
   }
 

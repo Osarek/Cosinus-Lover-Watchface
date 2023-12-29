@@ -33,6 +33,10 @@
         <settingConfig type="alphaNumeric"/>           
     </setting>
 
+     <setting propertyKey="@Properties.ShowSeconds" title="Show seconds hands">
+        <settingConfig type="boolean"/>           
+    </setting>
+
 
     <setting propertyKey="@Properties.Cosinushand" title="Cosinus/sinus on witch hand?">
         <settingConfig type="list">

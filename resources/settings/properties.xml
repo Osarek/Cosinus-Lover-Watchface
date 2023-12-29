@@ -9,6 +9,7 @@
     <property id="SinusColor" type="string">00FFFF</property>
     <property id="AngleColor" type="string">FF00FF</property>
     <property id="AxisColor" type="string">999999</property>
+    <property id="ShowSeconds" type="boolean">true</property>
     
     <property id="Cosinushand" type="number">2</property>
 
