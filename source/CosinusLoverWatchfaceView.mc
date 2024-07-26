@@ -8,14 +8,23 @@ import Toybox.Application.Properties;
 class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
   var animator;
   var ratio = 1;
+  var doFullRedrawOnPartial = true;
+
+  var common;
+
   function initialize() {
     WatchFace.initialize();
     // animator = new Animator();
+       MyWeather.registerCurrent = true;
+    common = new Common();
   }
 
   // Load your resources here
   function onLayout(dc as Dc) as Void {
     setLayout(Rez.Layouts.WatchFace(dc));
+
+        common.onLayout(dc);
+
   }
 
   // Called when this View is brought to the foreground. Restore
@@ -26,12 +35,21 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
   }
 
   function onPartialUpdate(dc) as Void {
+    if (doFullRedrawOnPartial) {
+      onUpdateFromPartial(dc);
+    }
+    doFullRedrawOnPartial = false;
+  }
+
+  function onUpdateFromPartial(dc as Dc) as Void {
     onUpdate(dc);
   }
 
   // Update the view
   function onUpdate(dc as Dc) as Void {
     View.onUpdate(dc);
+        common.onUpdate(dc);
+
     // animator.timerCounter++;
 
     var TimeSegmentsColor =
@@ -272,75 +290,75 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
 
       //Angles
 
-if (angleChoosen != angleSec || ShowSeconds != false){
-      dc.setColor(AngleColor, Graphics.COLOR_TRANSPARENT);
+      if (angleChoosen != angleSec || ShowSeconds != false) {
+        dc.setColor(AngleColor, Graphics.COLOR_TRANSPARENT);
 
-      drawText(
-        dc,
-        0.2,
-        -0.2,
-        Graphics.FONT_SYSTEM_XTINY,
-        ((-angleChoosen + 360 * 2) % 360) + "°",
-        Graphics.TEXT_JUSTIFY_VCENTER | Graphics.TEXT_JUSTIFY_CENTER,
-        handHourSize
-      );
-      if (angleChoosen != 0) {
-        drawArc(
+        drawText(
           dc,
-          0,
-          0,
           0.2,
-          Graphics.ARC_COUNTER_CLOCKWISE,
-          0,
-          (-angleChoosen + 360 * 2) % 360,
-          handSize
+          -0.2,
+          Graphics.FONT_SYSTEM_XTINY,
+          ((-angleChoosen + 360 * 2) % 360) + "°",
+          Graphics.TEXT_JUSTIFY_VCENTER | Graphics.TEXT_JUSTIFY_CENTER,
+          handHourSize
+        );
+        if (angleChoosen != 0) {
+          drawArc(
+            dc,
+            0,
+            0,
+            0.2,
+            Graphics.ARC_COUNTER_CLOCKWISE,
+            0,
+            (-angleChoosen + 360 * 2) % 360,
+            handSize
+          );
+        }
+
+        //Cosinus - sinus
+        dc.setColor(CosinusColor, Graphics.COLOR_TRANSPARENT);
+
+        drawLine(dc, cos, 0, cos, sin, handSize);
+
+        var alignCos = Graphics.TEXT_JUSTIFY_CENTER;
+        var alignSin = Graphics.TEXT_JUSTIFY_RIGHT;
+
+        if (cos < 0) {
+          alignSin = Graphics.TEXT_JUSTIFY_LEFT;
+        }
+
+        var yCosText = 0.2;
+        var xSinText = -0.05;
+        if (cos < 0) {
+          xSinText = -xSinText;
+        }
+        if (sin > 0) {
+          yCosText = -yCosText;
+        }
+
+        drawText(
+          dc,
+          cos,
+          yCosText,
+          Graphics.FONT_SYSTEM_XTINY,
+          "cos\n" + cos.format("%.2f"),
+          Graphics.TEXT_JUSTIFY_VCENTER | alignCos,
+          handHourSize
+        );
+
+        dc.setColor(SinusColor, Graphics.COLOR_TRANSPARENT);
+
+        drawLine(dc, 0, sin, cos, sin, handSize);
+        drawText(
+          dc,
+          xSinText,
+          sin,
+          Graphics.FONT_SYSTEM_XTINY,
+          "sin\n" + sin.format("%.2f"),
+          Graphics.TEXT_JUSTIFY_VCENTER | alignSin,
+          handHourSize
         );
       }
-
-      //Cosinus - sinus
-      dc.setColor(CosinusColor, Graphics.COLOR_TRANSPARENT);
-
-      drawLine(dc, cos, 0, cos, sin, handSize);
-
-      var alignCos = Graphics.TEXT_JUSTIFY_CENTER;
-      var alignSin = Graphics.TEXT_JUSTIFY_RIGHT;
-
-      if (cos < 0) {
-        alignSin = Graphics.TEXT_JUSTIFY_LEFT;
-      }
-
-      var yCosText = 0.2;
-      var xSinText = -0.05;
-      if (cos < 0) {
-        xSinText = -xSinText;
-      }
-      if (sin > 0) {
-        yCosText = -yCosText;
-      }
-
-      drawText(
-        dc,
-        cos,
-        yCosText,
-        Graphics.FONT_SYSTEM_XTINY,
-        "cos\n" + cos.format("%.2f"),
-        Graphics.TEXT_JUSTIFY_VCENTER | alignCos,
-        handHourSize
-      );
-
-      dc.setColor(SinusColor, Graphics.COLOR_TRANSPARENT);
-
-      drawLine(dc, 0, sin, cos, sin, handSize);
-      drawText(
-        dc,
-        xSinText,
-        sin,
-        Graphics.FONT_SYSTEM_XTINY,
-        "sin\n" + sin.format("%.2f"),
-        Graphics.TEXT_JUSTIFY_VCENTER | alignSin,
-        handHourSize
-      );
-    }
     }
   }
 

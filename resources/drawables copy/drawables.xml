@@ -1,0 +1,11 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+      <bitmap id="minute" filename="images/minute.png" packingFormat="png"/>
+        <bitmap id="battery" filename="images/battery.png" packingFormat="png"/>
+        <bitmap id="step" filename="images/step.png" packingFormat="png"/>
+        <bitmap id="temperature" filename="images/temperature.png" packingFormat="png"/>
+        <bitmap id="phone_on" filename="images/phone_on.png" packingFormat="png"/>
+        <bitmap id="phone_off" filename="images/phone_off.png" packingFormat="png"/>
+        <bitmap id="heart" filename="images/heart.png" packingFormat="png"/>
+
+</drawables>

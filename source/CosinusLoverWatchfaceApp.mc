@@ -4,9 +4,13 @@ import Toybox.WatchUi;
 
 class CosinusLoverWatchfaceApp extends Application.AppBase {
 
+ var view;
     function initialize() {
         AppBase.initialize();
+        view =new CosinusLoverWatchfaceView();
     }
+
+    
 
     // onStart() is called on application start up
     function onStart(state as Dictionary?) as Void {
@@ -18,7 +22,7 @@ class CosinusLoverWatchfaceApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new CosinusLoverWatchfaceView() ] as Array<Views or InputDelegates>;
+        return [ view,new WatchDelegate(view) ] as Array<Views or InputDelegates>;
     }
 
     // New app settings have been received so trigger a UI update
