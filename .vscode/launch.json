@@ -1,0 +1,352 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    
+  "configurations": [
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "approachs7042mm-390x390",
+      "stopAtLaunch": false,
+      "device": "approachs7042mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "approachs7047mm-454x454",
+      "stopAtLaunch": false,
+      "device": "approachs7047mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "d2airx10-416x416",
+      "stopAtLaunch": false,
+      "device": "d2airx10"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "d2mach1-454x454",
+      "stopAtLaunch": false,
+      "device": "d2mach1"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "epix2-416x416",
+      "stopAtLaunch": false,
+      "device": "epix2"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "epix2pro42mm-390x390",
+      "stopAtLaunch": false,
+      "device": "epix2pro42mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "epix2pro47mm-416x416",
+      "stopAtLaunch": false,
+      "device": "epix2pro47mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "epix2pro51mm-454x454",
+      "stopAtLaunch": false,
+      "device": "epix2pro51mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7-260x260",
+      "stopAtLaunch": false,
+      "device": "fenix7"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7pro-260x260",
+      "stopAtLaunch": false,
+      "device": "fenix7pro"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7pronowifi-260x260",
+      "stopAtLaunch": false,
+      "device": "fenix7pronowifi"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7s-240x240",
+      "stopAtLaunch": false,
+      "device": "fenix7s"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7spro-240x240",
+      "stopAtLaunch": false,
+      "device": "fenix7spro"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7x-280x280",
+      "stopAtLaunch": false,
+      "device": "fenix7x"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7xpro-280x280",
+      "stopAtLaunch": false,
+      "device": "fenix7xpro"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix7xpronowifi-280x280",
+      "stopAtLaunch": false,
+      "device": "fenix7xpronowifi"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix843mm-416x416",
+      "stopAtLaunch": false,
+      "device": "fenix843mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix847mm-454x454",
+      "stopAtLaunch": false,
+      "device": "fenix847mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix8pro47mm-454x454",
+      "stopAtLaunch": false,
+      "device": "fenix8pro47mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix8solar47mm-260x260",
+      "stopAtLaunch": false,
+      "device": "fenix8solar47mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenix8solar51mm-280x280",
+      "stopAtLaunch": false,
+      "device": "fenix8solar51mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fenixe-416x416",
+      "stopAtLaunch": false,
+      "device": "fenixe"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr165-390x390",
+      "stopAtLaunch": false,
+      "device": "fr165"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr255-260x260",
+      "stopAtLaunch": false,
+      "device": "fr255"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr255m-260x260",
+      "stopAtLaunch": false,
+      "device": "fr255m"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr255s-218x218",
+      "stopAtLaunch": false,
+      "device": "fr255s"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr255sm-218x218",
+      "stopAtLaunch": false,
+      "device": "fr255sm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr265-416x416",
+      "stopAtLaunch": false,
+      "device": "fr265"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr265s-360x360",
+      "stopAtLaunch": false,
+      "device": "fr265s"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr57042mm-390x390",
+      "stopAtLaunch": false,
+      "device": "fr57042mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr57047mm-454x454",
+      "stopAtLaunch": false,
+      "device": "fr57047mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr955-260x260",
+      "stopAtLaunch": false,
+      "device": "fr955"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr965-454x454",
+      "stopAtLaunch": false,
+      "device": "fr965"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "fr970-454x454",
+      "stopAtLaunch": false,
+      "device": "fr970"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "instinct3amoled45mm-390x390",
+      "stopAtLaunch": false,
+      "device": "instinct3amoled45mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "instinct3amoled50mm-416x416",
+      "stopAtLaunch": false,
+      "device": "instinct3amoled50mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "instinctcrossoveramoled-390x390",
+      "stopAtLaunch": false,
+      "device": "instinctcrossoveramoled"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "marq2-390x390",
+      "stopAtLaunch": false,
+      "device": "marq2"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "marq2aviator-390x390",
+      "stopAtLaunch": false,
+      "device": "marq2aviator"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu2-416x416",
+      "stopAtLaunch": false,
+      "device": "venu2"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu2plus-416x416",
+      "stopAtLaunch": false,
+      "device": "venu2plus"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu2s-360x360",
+      "stopAtLaunch": false,
+      "device": "venu2s"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu3-454x454",
+      "stopAtLaunch": false,
+      "device": "venu3"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu3s-390x390",
+      "stopAtLaunch": false,
+      "device": "venu3s"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu441mm-390x390",
+      "stopAtLaunch": false,
+      "device": "venu441mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venu445mm-454x454",
+      "stopAtLaunch": false,
+      "device": "venu445mm"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "venux1-448x486",
+      "stopAtLaunch": false,
+      "device": "venux1"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "vivoactive5-390x390",
+      "stopAtLaunch": false,
+      "device": "vivoactive5"
+    },
+    {
+      "type": "monkeyc",
+      "request": "launch",
+      "name": "vivoactive6-390x390",
+      "stopAtLaunch": false,
+      "device": "vivoactive6"
+    }
+  ]
+}

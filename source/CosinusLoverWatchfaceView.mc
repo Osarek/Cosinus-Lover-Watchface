@@ -87,7 +87,7 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
     var sinSec = Math.sin(Math.toRadians(angleSec));
     var cosSec = Math.cos(Math.toRadians(angleSec));
 
-    var handHourSize = 0.4;
+    var handHourSize = 0.5;
     var handMinSize = 0.9;
     var handSecSize = 1.0;
     var segmentRatio = 0.95;
@@ -458,7 +458,7 @@ class CosinusLoverWatchfaceView extends WatchUi.WatchFace {
 
   function fillPolygon(
     dc as Dc,
-    pts as Lang.Array<Lang.Array<Lang.Numeric> >,
+    pts as Lang.Array<Graphics.Point2D>,
     ratio as Float
   ) as Void {
     for (var i = 0; i < pts.size(); i++) {

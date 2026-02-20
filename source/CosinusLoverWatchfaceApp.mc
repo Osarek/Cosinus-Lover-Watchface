@@ -21,8 +21,8 @@ class CosinusLoverWatchfaceApp extends Application.AppBase {
     }
 
     // Return the initial view of your application here
-    function getInitialView() as Array<Views or InputDelegates>? {
-        return [ view,new WatchDelegate(view) ] as Array<Views or InputDelegates>;
+    function getInitialView() as [ WatchUi.Views ] or [ WatchUi.Views, WatchUi.InputDelegates ] {
+        return [ view,new WatchDelegate(view) ];
     }
 
     // New app settings have been received so trigger a UI update
